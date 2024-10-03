@@ -21,22 +21,31 @@
             <img id="logo" src="./assets/logo-dark.svg" alt="logo-dark">
         </div>
 
+        <!-- Boards Navigation -->
         <div class="boards-nav-links-div" id="boards-nav-links-div">
             <h4 id="headline-sidepanel">ALL BOARDS</h4>
         </div>
+
+        <!-- Sidebar -->
         <div class="side-bar-bottom">
+
+            <!-- Theme toggle -->
             <div class="toggle-div">
                 <img src="./assets/icon-dark-theme.svg" id="icon-dark" alt="icon-dark-theme">
                 <input type="checkbox" id="switch" />
                 <label for="switch" id="label-checkbox-theme"></label>
                 <img src="./assets/icon-light-theme.svg" id="icon-light" alt="icon-light-theme">
             </div>
+
+            <!-- Hide sidebar button -->
             <div class="hide-side-bar-div">
                 <img src="./assets/icon-hide-sidebar.svg" alt="icon-hide-sidebar">
                 <button id="hide-side-bar-btn">Hide Sidebar</button>
             </div>
         </div>
     </nav>
+
+    <!-- Show sidebar button -->
     <button id="show-side-bar-btn">
         <img src="./assets/icon-show-sidebar.svg" alt="icon-show-sidebar">
     </button>
@@ -48,15 +57,24 @@
                 <img src="./assets/logo-mobile.svg" alt="logo-mobile" class="logo-mobile">
                 <h2 class="header-board-name" id="header-board-name"></h2>
                 <button class="dropdownBtn" id="dropdownBtn">
-                    <img src="./assets/icon-chevron-down.svg" alt="icon-chevron-down" class="icon-chevron-down" id="dropDownIcon">
+                    <img src="./assets/icon-chevron-down.svg" alt="icon-chevron-down" class="icon-chevron-down"
+                        id="dropDownIcon">
                 </button>
             </div>
             <button id="add-new-task-btn" class="primary-btn">+ Add New Task</button>
             <button class="edit-btn" id="edit-board-btn">
                 <p id="three-dots-icon">&#8942;</p>
             </button>
-            <div id="editBoardDiv" class="editBtnsDiv">
-                <button class="editBtns" id="deleteBoardBtn">Delete Board</button>
+
+            <!-- Edit Board -->
+            <div id="edit-board-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="close-edit-board-modal">&times;</span>
+                    <h4>Edit Board</h4>
+                    <div id="board-list"></div>
+                    <input type="text" id="new-board-name" placeholder="New Board Name">
+                    <button class="editBtns" id="addBoardBtn">Add Board</button>
+                </div>
             </div>
         </header>
 
@@ -71,6 +89,8 @@
                     <!-- Tasks container for TODO -->
                     <div class="tasks-container"></div>
                 </div>
+
+
                 <!-- DOING Column -->
                 <div class="column-div" data-status="doing">
                     <div id="doing-head-div" class="column-head-div">
@@ -80,6 +100,8 @@
                     <!-- Tasks container for DOING -->
                     <div class="tasks-container"></div>
                 </div>
+
+
                 <!-- DONE Column -->
                 <div class="column-div" data-status="done">
                     <div id="done-head-div" class="column-head-div">
@@ -96,13 +118,16 @@
     <!-- New Task Modal: Form for adding a new task. -->
     <form class="modal-window" id="new-task-modal-window">
         <h4 class="modal-title">Add New Task</h4>
+
         <div class="input-div">
             <label class="label-modal-window" id="modal-title-input" for="title-input">Title</label>
-            <input type="text" class="modal-input" id="title-input" placeholder="e.g. Take a little break">
+            <input type="text" class="modal-input" id="title-input" placeholder="e.g. Take a little break" required>
         </div>
+
         <div class="input-div">
             <label class="label-modal-window" id="modal-desc-input" for="desc-input">Description</label>
-            <textarea name="description" id="desc-input" placeholder="e.g. Pet your dog, have a cup of coffee, dance to your favourite song and come back to conquer this challenge. 💪🏾"></textarea>
+            <textarea name="description" id="desc-input"
+                placeholder="e.g. Pet your dog, have a cup of coffee, dance to your favourite song and come back to conquer this challenge. 💪🏾"></textarea>
         </div>
         <div class="input-div">
             <label class="label-modal-window" id="modal-select-status" for="select-status">Status</label>
@@ -112,6 +137,8 @@
                 <option value="done">done</option>
             </select>
         </div>
+
+        <!-- Input fields -->
         <div class="button-group">
             <button type="submit" class="submit-btn" id="create-task-btn">Create Task</button>
             <button type="button" class="submit-btn" id="cancel-add-task-btn">Cancel</button>
@@ -126,7 +153,8 @@
                 <button id="edit-btn" class="edit-btn"></button>
             </div>
             <div class="edit-task-div">
-                <textarea id="edit-task-desc-input" class="edit-task-description-input" placeholder="Task Description"></textarea>
+                <textarea id="edit-task-desc-input" class="edit-task-description-input"
+                    placeholder="Task Description"></textarea>
             </div>
             <div class="edit-task-div">
                 <label class="label-modal-window" for="edit-select-status">Current Status</label>
